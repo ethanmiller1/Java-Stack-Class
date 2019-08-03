@@ -64,15 +64,28 @@ class StackTest {
     // Peak top with multiple layers.
     @Test
     public void peakTop() {
+        // arrange - simulate the data.
+        stack.push(1);
+        stack.push(2);
+
+        // act - simulate the actions a user would take.
+        Object result = stack.peakTop();
+
+        // assert - assert what the response should be.
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void pop() {
         // arrange
         stack.push(1);
         stack.push(2);
 
         // act
-        Object result = stack.peakTop();
+        Object result = stack.pop();
 
         // assert
-        assertEquals(2, result);
+        assertEquals(2,result);
     }
 
 }

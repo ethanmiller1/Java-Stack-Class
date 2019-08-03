@@ -21,4 +21,9 @@ public class Stack {
         count = data;
     }
 
+    public Object pop() {
+        Object top = count;
+        count =- 1;
+        return top;
+    }
 }
