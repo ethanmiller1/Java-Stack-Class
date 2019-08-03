@@ -13,6 +13,10 @@ public class Stack {
 
     }
 
+    public Object peakTop() {
+        return count;
+    }
+
     public void push(Object data) {
         count = data;
     }

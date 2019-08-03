@@ -24,7 +24,7 @@ class StackTest {
     public void isNotEmpty() {
 
         // arrange
-        stack.count = 1;
+        stack.push(1);
 
         // act
         boolean result = stack.isEmpty();
@@ -45,6 +45,34 @@ class StackTest {
         // assert
         boolean expected = false;
         assertEquals(expected, result);
+    }
+
+    // Test push with peakTop method.
+    @Test
+    public void pushTop() {
+        // arrange
+        stack.push(1);
+
+        // act
+        Object result = stack.peakTop();
+
+        // assert
+        assertEquals(1, result);
+    }
+
+
+    // Peak top with multiple layers.
+    @Test
+    public void peakTop() {
+        // arrange
+        stack.push(1);
+        stack.push(2);
+
+        // act
+        Object result = stack.peakTop();
+
+        // assert
+        assertEquals(2, result);
     }
 
 }
