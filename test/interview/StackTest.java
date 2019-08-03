@@ -20,5 +20,17 @@ class StackTest {
         assertTrue(stack.isEmpty());
     }
 
+    @Test
+    public void isNotEmpty() {
+
+        // arrange
+        stack.count = 1;
+
+        // act
+        boolean result = stack.isEmpty();
+
+        // assert
+        assertFalse(result);
+    }
 
 }

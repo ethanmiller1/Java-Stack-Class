@@ -2,8 +2,15 @@ package interview;
 
 public class Stack {
 
+    public Object count = null;
+
     public boolean isEmpty() {
-        return true;
+        if (count == null) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 }
