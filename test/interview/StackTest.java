@@ -33,4 +33,18 @@ class StackTest {
         assertFalse(result);
     }
 
+    // Test push with isEmpty method.
+    @Test
+    public void pushNotEmpty() {
+        // arrange
+        stack.push(1);
+
+        // act
+        boolean result = stack.isEmpty();
+
+        // assert
+        boolean expected = false;
+        assertEquals(expected, result);
+    }
+
 }

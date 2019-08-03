@@ -13,4 +13,8 @@ public class Stack {
 
     }
 
+    public void push(Object data) {
+        count = data;
+    }
+
 }
