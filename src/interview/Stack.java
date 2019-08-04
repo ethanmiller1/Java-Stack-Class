@@ -24,20 +24,19 @@ public class Stack {
 
     public void push(Object data) {
 
-        if (head.data != null) {
-            // Create a new node every time push is invoked.
-            Node pushed = new Node();
+        // Store previous head in new node.
+        Node oldhead = head;
 
-            // Store previous head in new node.
-            pushed = head;
+        // Overwrite head with blank Node.
+        head = new Node();
 
-            // Point to previous head in new head.
-            head.next = pushed;
-        }
-
-        // Make pushed the new head.
+        // Set pushed data as the new head.
         head.data = data;
+
+        // Set the old head as the next node.
+        head.next = oldhead;
     }
+
 
     public Object pop() {
         if (head.data == null) {
@@ -47,7 +46,7 @@ public class Stack {
 
         // Save the current head to return it later.
         Node top = new Node();
-        top.data = head.data;
+        top = head;
 
         // Make the next node the current head.
         head = head.next;

@@ -101,7 +101,7 @@ class StackTest {
 
         // assert
         assertEquals("Second", pop);
-        assertEquals("Second", peak);
+        assertEquals("First", peak);
     }
 
 
