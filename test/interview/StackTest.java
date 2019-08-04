@@ -67,12 +67,13 @@ class StackTest {
         // arrange - simulate the data.
         stack.push(1);
         stack.push(2);
+        stack.push(3);
 
         // act - simulate the actions a user would take.
         Object result = stack.peakTop();
 
         // assert - assert what the response should be.
-        assertEquals(2, result);
+        assertEquals(3, result);
     }
 
     @Test
@@ -87,5 +88,21 @@ class StackTest {
         // assert
         assertEquals(2,result);
     }
+
+    @Test
+    public void popReturnsSecondPushValuePeakReturnsFirstPushValue() {
+        // arrange
+        stack.push("First");
+        stack.push("Second");
+
+        // act
+        Object pop = stack.pop();
+        Object peak = stack.peakTop();
+
+        // assert
+        assertEquals("Second", pop);
+        assertEquals("Second", peak);
+    }
+
 
 }
