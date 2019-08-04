@@ -1,5 +1,7 @@
 package interview;
 
+import java.util.NoSuchElementException;
+
 public class Stack {
 
     private class Node {
@@ -39,10 +41,7 @@ public class Stack {
 
 
     public Object pop() {
-        if (head.data == null) {
-            // TODO: Raise exception.
-            return null;
-        }
+        if (isEmpty()) throw new NoSuchElementException("Stack is empty");
 
         // Save the current head to return it later.
         Node top = new Node();

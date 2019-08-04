@@ -3,6 +3,8 @@ package interview;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackTest {
@@ -104,5 +106,13 @@ class StackTest {
         assertEquals("First", peak);
     }
 
+    @Test
+    public void exceptionTesting() {
+        assertThrows(NoSuchElementException.class,
+                () -> {
+                    stack.pop();
+                },
+                "Stack is empty");
+    }
 
 }
